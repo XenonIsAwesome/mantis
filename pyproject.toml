@@ -13,7 +13,6 @@ readme = "README.md"
 license = {text = "MIT"}
 
 [tool.scikit-build]
-wheel.packages = ["stubs/mantis"]
 
 [tool.pyright]
-include = ["stubs/mantis"]
+include = ["mantis", "stubs/mantis"]

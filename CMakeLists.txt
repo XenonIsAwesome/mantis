@@ -116,9 +116,10 @@ set_target_properties(mantis PROPERTIES VERSION ${PROJECT_VERSION})
 #####################################################################################
 
 if(PyMantisEnabled)
-        pybind11_add_module(mantis_python pybind/pymantis.cpp)
-        target_link_libraries(mantis_python PRIVATE mantis)
-        set_target_properties(mantis_python PROPERTIES OUTPUT_NAME mantis)
+    pybind11_add_module(mantis_python pybind/pymantis.cpp)
+    target_link_libraries(mantis_python PRIVATE mantis)
+    set_target_properties(mantis_python PROPERTIES OUTPUT_NAME mantis)
+
     if(DEFINED SKBUILD)
         set_target_properties(mantis_python PROPERTIES INSTALL_RPATH "$ORIGIN")
         install(TARGETS mantis mantis_python DESTINATION .)
